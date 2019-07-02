@@ -26,7 +26,8 @@ setup(name='reverse_geocoder',
       package_data={'reverse_geocoder': ['rg_cities1000.csv']},
       setup_requires=['numpy>=1.11.0',],
       cmdclass={'build_ext': build_ext},
-      install_requires=['numpy>=1.11.0', 'scipy>=0.17.1',],
+      # capping versions to keep support for python 2.7
+      install_requires=['numpy>=1.11.0,<1.17.0', 'scipy>=0.17.1,<1.3.0',],
       description='Fast, offline reverse geocoder',
       license='lgpl',
       long_description=read('README.txt'))
